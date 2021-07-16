@@ -1,0 +1,21 @@
+.sidebar--visible {
+  display: block;
+  visibility: visible;
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+body:hover .visually-hidden {
+  a,
+  input,
+  button {
+    display: none !important;
+  }
+}

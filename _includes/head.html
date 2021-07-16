@@ -1,0 +1,48 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+
+  {% if site.plugins contains 'jekyll-seo-tag' or site.gems contains 'jekyll-seo-tag' %}
+  {% include head-seo.html %}
+  {% else %}
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description"
+    content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
+  {% endif %}
+
+  <script>
+    // If `prefers-color-scheme` is not supported, fall back to light mode.
+    // In this case, light.css will be downloaded with `highest` priority.
+    if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+      document.documentElement.style.display = 'none';
+      document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="/light.css" onload="document.documentElement.style.display = \'\'">'
+      );
+    }
+  </script>
+
+  <link rel="stylesheet" href="{{ 'assets/css/dark.css' | relative_url }}" media="(prefers-color-scheme: dark)"">
+  <link rel="stylesheet" href="{{ 'assets/css/light.css' | relative_url }}" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {% assign features = page.features | split: "," %}
+  {% for feature in features %}
+  <link rel="preload"
+        as="style"
+        href="{{ 'assets/css/feature.css' | replace: 'feature', feature | relative_url }}"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ 'assets/css/feature.css' | replace: 'feature', feature | relative_url }}">
+  </noscript>
+  {% endfor %}
+
+  <link rel="stylesheet" href="{{ 'assets/css/print.css' | relative_url }}" media="print">
+
+  {% if site.plugins contains 'jekyll-feed' or site.gems contains 'jekyll-feed'%}
+  {% include head-feed.html %}
+  {% endif %}
+</head>

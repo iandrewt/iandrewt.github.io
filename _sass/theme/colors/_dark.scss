@@ -1,0 +1,22 @@
+:root {
+  --base-color: #252a34;
+  --text-color: #eaeaea;
+  --accent-color: #00adb5;
+  --background-color: var(--base-color);
+  --border-color: rgba(var(--text-color), 0.5);
+  --link-hover-color: #008288;
+  --small-color: #f2f2f2;
+  --back-to-top-color: #fff;
+  --taxonomy-title-color: var(--back-to-top-color);
+  --taxonomy-count-color: var(--back-to-top-color);
+  --sidebar-background-color: #1c2023;
+  --sidebar-text-color: #c7ccd1;
+  --pager-hover-color: #33bdc4;
+  --title-color: #efefef;
+
+  /* Icons */
+  --email: #fff;
+  --github: #f0f6fc;
+  --rss: #ffa500;
+  --twitter: #1da1f2;
+}

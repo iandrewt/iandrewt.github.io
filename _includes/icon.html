@@ -1,0 +1,4 @@
+<a href="https://{{ include.url }}/{{ include.username }}">
+  <span class="icon icon--{{ include.label | downcase }}">{% include icon-{{ include.label | downcase }}.svg %}</span>
+  <span class="label">{{ include.label | default: include.username }}</span>
+</a>

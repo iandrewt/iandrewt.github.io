@@ -1,0 +1,24 @@
+url: "http://iandrewt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Andrew Titmuss" # the name of your site, e.g. ACME Corp.
+description: "My adventures as a graduate typescript developer"
+lang: en-US
+github: [metadata]
+github_username: iandrewt
+twitter_username: iandrewt
+author:
+  name: "Andrew Titmuss"
+  twitter: iandrewt
+
+sass:
+  style: compressed
+
+exclude:
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - .stylelintrc.yml
+  - .stylelintignore
+  - .gitignore
+  - node_modules/

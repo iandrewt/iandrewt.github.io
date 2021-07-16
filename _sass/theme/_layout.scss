@@ -1,0 +1,179 @@
+.canvas {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  background-color: var(--background-color);
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  transform: translateX(0);
+  transition: $global-transition;
+  width: 100%;
+  z-index: 100;
+
+  @media screen and (min-width: $xlarge) {
+    transition: none;
+    width: calc(100% - (#{$sidebar-width} * 1.5));
+  }
+}
+
+.inner {
+  max-width: $large;
+}
+
+main,
+.intro {
+  > .inner {
+    padding: 0 0.5rem;
+
+    @media (min-width: $small) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media (min-width: $medium) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    @media (min-width: $large) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    @media (min-width: $xlarge) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+}
+
+main {
+  section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+}
+
+.layout {
+  &--post,
+  &--page {
+    .entry-content {
+      @media (min-width: $large) {
+        width: span(14 of 16);
+      }
+    }
+  }
+
+  &--about {
+    .entry-wrap {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (min-width: $medium) {
+        flex-wrap: nowrap;
+      }
+    }
+
+    .entry-content {
+      @media (min-width: $medium) {
+        flex: 1;
+      }
+    }
+
+    .entry-sidebar {
+      order: -1;
+
+      @media (min-width: $medium) {
+        order: initial;
+      }
+
+      .author-picture {
+        border-radius: 2 * $border-radius;
+        margin: 0 0 2rem;
+
+        @media (min-width: $medium) {
+          margin: 0 0 0 2rem;
+        }
+      }
+    }
+  }
+
+  &--cv {
+    .entries {
+      .entry-header {
+        @media (min-width: $medium) {
+          padding-right: gutter(1 of 16);
+          width: span(5 of 16);
+
+          /* remove space after last child element */
+          > *:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .entry-content {
+        @media (min-width: $medium) {
+          float: right;
+          width: span(11 of 16);
+        }
+      }
+    }
+
+    .entry {
+      a {
+        color: var(--accent-color);
+      }
+
+      address {
+        font-style: normal;
+      }
+
+      .title,
+      .position,
+      .institution,
+      .language {
+        margin-bottom: 0;
+      }
+
+      .date {
+        color: var(--small-color);
+        font-family: var(--monospace-font-family);
+        font-size: 80%;
+        margin-bottom: 1rem;
+      }
+
+      .courses-title,
+      .awarder,
+      .publisher,
+      .level {
+        margin: 1rem 0 0;
+      }
+
+      .courses,
+      .keywords {
+        @include list-unstyled;
+      }
+    }
+
+    .taxonomy {
+      + .taxonomy {
+        margin-top: 0.5rem;
+      }
+
+      .title {
+        display: inline-block;
+        margin-right: 1rem;
+      }
+
+      .keywords {
+        display: inline-block;
+      }
+    }
+  }
+}

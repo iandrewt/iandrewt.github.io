@@ -1,0 +1,104 @@
+.site-title {
+  @include fluid-type($min-vw, $max-vw, 20px, 24px);
+
+  font-family: var(--font-family);
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+  padding: 1.8125rem 1rem;
+  padding-right: calc(10vw + (2 * #{$navicon-width}));
+
+  @media (min-width: $medium) {
+    padding-left: 2rem;
+  }
+
+  @media (min-width: $xlarge) {
+    padding-left: 5vw;
+  }
+
+  a {
+    align-items: center;
+    color: var(--text-color);
+    display: flex;
+    min-height: $site-image-height;
+    text-decoration: none;
+  }
+}
+
+.site-logo {
+  border-radius: 50%;
+  height: $site-image-height;
+  margin-right: 0.5rem;
+  width: $site-image-width;
+}
+
+.more-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-to-top {
+  color: var(--back-to-top-color);
+  display: block;
+  font-size: 0.75em;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.taxonomy-section {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+
+  &:not(:last-child) {
+    border-bottom: solic 1px var(--border-color);
+  }
+
+  + .taxonomy-section {
+    margin-top: 2em;
+  }
+}
+
+.taxonomy-title {
+  @include fluid-type($min-vw, $max-vw, 28px, 32px);
+
+  color: var(--taxonomy-title-color);
+  font-family: var(--font-family);
+  margin-bottom: 0.5em;
+}
+
+.taxonomy-count {
+  color: var(--taxonomy-count-color);
+}
+
+.taxonomy-index {
+  display: grid;
+  font-family: var(--font-family);
+  font-size: 0.9em;
+  grid-column-gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  a {
+    border-bottom: 1px solid var(--border-color);
+    color: inherit;
+    display: flex;
+    justify-content: space-content;
+    padding: 0.25em 0;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  + .taxonomy-section {
+    margin-top: 3em;
+  }
+}

@@ -1,0 +1,27 @@
+<ul class="contact-list">
+  {% if site.email %}
+  <li class="menu-item">
+    <a href="mailto:{{ site.email }}">
+      <span class="icon icon--email">{% include icon-email.svg %}</span>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  {% endif %}
+
+  {% if site.github_username %}
+  <li class="menu-item">{% include icon.html username=site.github_username url='github.com' label='GitHub' %}</li>
+  {% endif %}
+
+  {% if site.twitter_username %}
+  <li class="menu-item">{% include icon.html username=site.twitter_username url='twitter.com' label='Twitter' %}</li>
+  {% endif %}
+
+  {% if site.plugins contains 'jekyll-feed' or site.gems contains 'jekyll-feed' %}
+  <li class="menu-item">
+    <a href="{{ site.feed.path | default: 'feed.xml' | relative_url }}" title="Atom Feed">
+      <span class="icon icon--rss">{% include icon-rss.svg %}</span>
+      <span class="label">Subscribe</span>
+    </a>
+  </li>
+  {% endif %}
+</ul>

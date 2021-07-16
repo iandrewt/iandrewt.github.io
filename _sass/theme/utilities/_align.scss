@@ -1,0 +1,65 @@
+.align-basline {
+  vertical-align: baseline !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+  vertical-align: text-top !important;
+}
+
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure.align-center {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+
+.align-right {
+  float: right;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.align-left {
+  float: left;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.wrapper {
+  &--pushed {
+    transform: translateX($sidebar-width);
+    transform-origin: right;
+  }
+
+  @media screen and (min-width: $xlarge) {
+    transform: translateX(1.5 * $sidebar-width);
+    transform-origin: right;
+  }
+}

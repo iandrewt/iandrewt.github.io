@@ -1,0 +1,22 @@
+$icons: (
+  (email, var(--email)),
+  (github, var(--github)),
+  (rss, var(--rss)),
+  (twitter, var(--twitter)),
+);
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  line-height: 1;
+  position: relative;
+  vertical-align: text-top;
+  width: 1em;
+
+  @each $icon, $color in $icons {
+    &--#{$icon} svg {
+      fill: $color;
+    }
+  }
+}

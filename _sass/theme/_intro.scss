@@ -1,0 +1,64 @@
+.intro {
+  margin: 1rem 0;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.intro-image {
+  margin-bottom: 3rem;
+  margin-top: -3rem; /* compensate for intro top margin */
+  position: relative;
+
+  &::before {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @if $intro-image-color-overlay == true {
+      background-color: rgba(var(--accent-color), 0.25);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.intro-text {
+  /* remove space after last child element */
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.intro-title {
+  @include fluid-type($min-vw, $max-vw, 26px, 80px);
+
+  color: var(--title-color);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.intro-subtitle {
+  @include fluid-type($min-vw, $max-vw, 18px, 28px);
+
+  font-style: italic;
+}
+
+.intro-actions {
+  @include list-unstyled;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.intro-more {
+  > p:first-child {
+    font-size: 1.125em;
+    line-height: 1.625;
+  }
+}

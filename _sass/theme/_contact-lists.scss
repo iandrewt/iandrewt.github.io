@@ -1,0 +1,7 @@
+.contact-list {
+  @include list-unstyled;
+
+  .icon {
+    margin-right: 0.25em;
+  }
+}
