@@ -137,6 +137,10 @@
     right: 2rem;
   }
 
+  @media (min-width: $large) {
+    right: 5vw;
+  }
+
   @media (min-width: $xlarge) {
     display: none;
   }

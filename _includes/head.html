@@ -13,21 +13,9 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
   {% endif %}
 
-  <script>
-    // If `prefers-color-scheme` is not supported, fall back to light mode.
-    // In this case, light.css will be downloaded with `highest` priority.
-    if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-      document.documentElement.style.display = 'none';
-      document.head.insertAdjacentHTML(
-        'beforeend',
-        '<link rel="stylesheet" href="/light.css" onload="document.documentElement.style.display = \'\'">'
-      );
-    }
-  </script>
-
   <link rel="stylesheet" href="{{ 'assets/css/dark.css' | relative_url }}" media="(prefers-color-scheme: dark)"">
   <link rel="stylesheet" href="{{ 'assets/css/light.css' | relative_url }}" media="(prefers-color-scheme: light)">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}">
 
   {% assign features = page.features | split: "," %}
   {% for feature in features %}

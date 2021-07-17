@@ -1,32 +1,3 @@
-.navicon {
-  background: $navicon-content-bg;
-  border-radius: $navicon-width;
-  height: $navicon-height;
-  position: relative;
-  transition-duration: $navicon-duration;
-  width: $navicon-width;
-
-  &::before,
-  &::after {
-    background: $navicon-content-bg;
-    border-radius: $navicon-width;
-    content: '';
-    display: block;
-    height: $navicon-height;
-    position: absolute;
-    transition-duration: $navicon-duration $navicon-duration / 2;
-    width: $navicon-width;
-  }
-
-  &::before {
-    top: (2 * $navicon-height);
-  }
-
-  &::after {
-    top: (-2 * $navicon-height);
-  }
-}
-
 .navicon-button {
   background-color: transparent;
   border: 0;
@@ -37,7 +8,6 @@
   outline: none;
   padding: 0.90625rem 0;
   position: relative;
-  transition: $navicon-duration / 2;
   user-select: none;
 
   &.open {
@@ -64,6 +34,33 @@
     .navicon::after {
       top: (-2.5 * $navicon-height);
     }
+  }
+}
+
+.navicon {
+  background: $navicon-content-bg;
+  border-radius: $navicon-width;
+  height: $navicon-height;
+  position: relative;
+  width: $navicon-width;
+
+  &::before,
+  &::after {
+    background: $navicon-content-bg;
+    border-radius: $navicon-width;
+    content: '';
+    display: block;
+    height: $navicon-height;
+    position: absolute;
+    width: $navicon-width;
+  }
+
+  &::before { /* stylelint-disable-line no-descending-specificity */
+    top: (2 * $navicon-height);
+  }
+
+  &::after { /* stylelint-disable-line no-descending-specificity */
+    top: (-2 * $navicon-height);
   }
 }
 
